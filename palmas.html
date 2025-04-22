@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <title>FONDA LAS PALMAS  - Menú de Bebidas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e1e1e1;
+        }
+        
+        h1 {
+            color: #8B0000;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        h3 {
+            color: #8B0000;
+            font-size: 1.5rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e1e1e1;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-weight: bold;
+        }
+        
+        .item-price {
+            color: #8B0000;
+            font-weight: bold;
+        }
+        
+        .note {
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+            color: #666;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .category-toggle {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .category-toggle:hover {
+            background-color: #A52A2A;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                margin-top: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FONDA LAS PALMAS DISCO BAR</h1>
+            <h2>DISCO BAR</h2>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar bebida...">
+        </div>
+        
+        <div class="menu-section">
+            <button class="category-toggle" onclick="toggleSection('cervezas')">Cervezas</button>
+            <div id="cervezas">
+                <div class="menu-item">
+                    <span class="item-name">CERVEZA NEGRA</span>
+                    <span class="item-price">3,500</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUILA LIGTH</span>
+                    <span class="item-price">3,500</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">CLUB COLOMBIA</span>
+                    <span class="item-price">5,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">CORONITA</span>
+                    <span class="item-price">5,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">COSTENITA</span>
+                    <span class="item-price">3,500</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">POKER</span>
+                    <span class="item-price">3,500</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">BUDWEISER</span>
+                    <span class="item-price">3,500</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">STELLA</span>
+                    <span class="item-price">6,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">HEINEKEN</span>
+                    <span class="item-price">5,000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <button class="category-toggle" onclick="toggleSection('licores')">Licores</button>
+            <div id="licores">
+                <div class="menu-item">
+                    <span class="item-name">SMIRNOFF</span>
+                    <span class="item-price">10,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">OLD PAR 750 ML</span>
+                    <span class="item-price">250,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">OLD PAR 500 ML</span>
+                    <span class="item-price">160,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">BUCHANANS DEUX 750</span>
+                    <span class="item-price">250,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">BUCHANANS 18 AÑO</span>
+                    <span class="item-price">430,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">BUCHANANS MASTER 750</span>
+                    <span class="item-price">250,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">MASTER LITRO</span>
+                    <span class="item-price">300,000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <button class="category-toggle" onclick="toggleSection('ron')">Ron</button>
+            <div id="ron">
+                <div class="menu-item">
+                    <span class="item-name">AMARILLO 750</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AMARILLO LITRO</span>
+                    <span class="item-price">95,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON CAIDAS ESENCIAL LITRO</span>
+                    <span class="item-price">105,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON CAIDAS ESENCIAL 750</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON CAIDAS 8 AÑO MEDIA</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON CAIDAS 8 AÑOS 750</span>
+                    <span class="item-price">130,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN 12 AÑOS</span>
+                    <span class="item-price">160,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON VIEJO DE CAIDAS MEDIA</span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON VIEJO DE CAIDAS 750</span>
+                    <span class="item-price">90,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON VIEJO DE CAIDAS LITRO</span>
+                    <span class="item-price">105,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN MEDIA</span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN 750</span>
+                    <span class="item-price">90,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN LITRO</span>
+                    <span class="item-price">105,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN 8 AÑOS MEDIA</span>
+                    <span class="item-price">75,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RON MEDELIN 8 AÑOS 750</span>
+                    <span class="item-price">130,000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <button class="category-toggle" onclick="toggleSection('aguardiente')">Aguardiente</button>
+            <div id="aguardiente">
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA AZUL 375</span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA AZUL 750</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA AZUL 75</span>
+                    <span class="item-price">105,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE ROJO 375</span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE ROJO 750</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE ROJO 75</span>
+                    <span class="item-price">105,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA VERDE MEDIA</span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA VERDE 750</span>
+                    <span class="item-price">85,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">AGUARDENTE TAPA VERDE LITRO</span>
+                    <span class="item-price">105,000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <button class="category-toggle" onclick="toggleSection('otros')">Otros</button>
+            <div id="otros">
+                <div class="menu-item">
+                    <span class="item-name">AGUA</span>
+                    <span class="item-price">8,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">RED BULL</span>
+                    <span class="item-price">10,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GATORADE</span>
+                    <span class="item-price">5,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">CANADA DRY</span>
+                    <span class="item-price">4,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">ELECTROLIT</span>
+                    <span class="item-price">10,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GARRAFON TAPA VERDE</span>
+                    <span class="item-price">170,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GARRAFON TAPA AZUL</span>
+                    <span class="item-price">190,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GARRAFON MEDELIN</span>
+                    <span class="item-price">190,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GARRAFON TAPA ROJA</span>
+                    <span class="item-price">190,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">GARRAFON AMARILLO</span>
+                    <span class="item-price">150,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">COCACOLA</span>
+                    <span class="item-price">4,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">SODA</span>
+                    <span class="item-price">4,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">MICHELADA TRADICIONAL</span>
+                    <span class="item-price">3,000</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">MICHELADA CLUB, COR, HEI</span>
+                    <span class="item-price">4,000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            Propina voluntaria para el mesero
+        </div>
+    </div>
+
+    <script>
+        // Función para alternar la visibilidad de las secciones
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('hidden');
+        }
+        
+        // Función para buscar items en el menú
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+            
+            items.forEach(item => {
+                const itemName = item.querySelector('.item-name').textContent.toLowerCase();
+                if (itemName.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Mostrar todas las secciones cuando se busca
+            if (searchTerm.length > 0) {
+                document.querySelectorAll('.menu-section > div').forEach(section => {
+                    section.classList.remove('hidden');
+                });
+            }
+        });
+        
+        // Inicialmente ocultar todas las secciones excepto la primera
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.menu-section > div');
+            sections.forEach((section, index) => {
+                if (index !== 0) {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
