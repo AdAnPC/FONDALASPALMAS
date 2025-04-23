@@ -441,43 +441,17 @@ transform: rotate(360deg);
 
 
 
-
-
 .promo {
-    text-align: center;
-    padding: 25px;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: #fff;
-    background: #000;
-    position: relative;
-    overflow: hidden;
-    margin: 20px 0;
+    display: grid;
+    place-items: center; /* Centrado en ambos ejes */
+    min-height: 80px;
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a, #1a1a1a);
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-.promo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%);
-    background-size: 10px 10px;
-    animation: shine 3s linear infinite;
-    opacity: 0.3;
-}
 
-@keyframes shine {
-    from { background-position: 0 0; }
-    to { background-position: 100px 100px; }
-}
-
-.promo span {
-    position: relative;
-    z-index: 2;
-}
 </style>
 
 </head>
@@ -744,7 +718,7 @@ transform: rotate(360deg);
             </div>
         </div>
         <div class="promo">
-            <span>PROMOCIONES DEL DÍA</span>
+            PROMOCIONES DEL DÍA
         </div>
         <div class="cuadro-glam">
             <div class="marco-dorado">
@@ -758,7 +732,6 @@ transform: rotate(360deg);
             </div>
         </div>
 
-        <img id="cube" src="cuTazo2.png" alt="prueba">
         <div class="note">
             Propina voluntaria para el mesero
         </div>
