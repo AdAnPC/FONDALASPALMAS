@@ -86,13 +86,13 @@
         }
         
         .item-price {
-            background: linear-gradient(135deg, rgb(250, 249, 247), rgb(147, 86, 209));
+            background: linear-gradient(135deg, rgb(235, 243, 5), rgb(202, 209, 4));
     -webkit-background-clip: text;
     background-clip: text;
     font-size: 1.5rem ;
     color: transparent;
     font-weight: bold;
-    text-shadow: 0 1px 1px rgba(171, 79, 232, 0.466);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.314);
         }
         
         .note {
@@ -190,7 +190,7 @@
   body {
         margin: 0;
         padding: 0;
-        background: url('palmas.jpg') no-repeat center center fixed;
+        background: url('fon.png') no-repeat center center fixed;
         background-size: cover;
         min-height: 100vh;
         font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
@@ -223,6 +223,27 @@
 }
 
 .cerveza-btn:hover {
+    background-color: #ffc800;
+    transform: translateY(-2px);
+}
+
+
+.ron-btn {
+    background-image: url('Ron.png');
+    background-repeat: no-repeat;
+    background-position: -25px 40%;
+    background-size: 100px;
+    padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+    border: none;
+    border-radius: 8px;
+    background-color: #d2a604;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ron-btn:hover {
     background-color: #ffc800;
     transform: translateY(-2px);
 }
@@ -285,7 +306,7 @@
         </div>
         
         <div class="menu-section">
-            <button class="category-toggle" onclick="toggleSection('licores')">Licores</button>
+            <button class="category-toggle licor-btn" onclick="toggleSection('licor')">Licor</button>
             <div id="licores">
                 <div class="menu-item">
                     <span class="item-name">SMIRNOFF</span>
@@ -319,7 +340,9 @@
         </div>
         
         <div class="menu-section">
-            <button class="category-toggle" onclick="toggleSection('ron')">Ron</button>
+        
+            <button class="category-toggle ron-btn" onclick="toggleSection('ron')">Ron</button>
+
             <div id="ron">
                 <div class="menu-item">
                     <span class="item-name">AMARILLO 750</span>
