@@ -361,19 +361,19 @@ transform: rotate(360deg);
     display: grid;
     grid-template-columns: 1fr; /* Solo 1 columna */
     gap: 20px; /* Espacio entre imágenes */
-    padding: 100px;
+    padding: 80px;
     max-width: 600px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centrado horizontal */
 }
 
 .galeria-premium img {
-    width: 200%;
-    height: 200px;
-    
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    height: auto; /* Altura automática (proporcional) */
+    min-height: 200px; /* Altura mínima */
     object-fit: cover;
     border: 2px solid #333;
-    transition: all 0.5s ease;
-    filter: sepia(0.3) brightness(0.9);
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s ease;
 }
 
 .galeria-premium img:hover {
