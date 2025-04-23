@@ -329,19 +329,24 @@ transform: rotate(360deg);
 .cuadro-glam {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     background: radial-gradient(circle, #3a3a3a 0%, #1a1a1a 100%);
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1200px; /* Ancho máximo ajustable */
+    margin: 0 auto; /* Centrado horizontal */
 }
 
 .marco-dorado {
-    border: 10px solid transparent;
+    border: 15px solid transparent; /* Borde más grueso */
     border-image: linear-gradient(45deg, #d4af37, #f9d423, #d4af37);
-    border-image-slice: 10;
-    padding: 20px;
+    border-image-slice: 1;
+    padding: 30px; /* Más espacio interno */
     background: #111;
-    box-shadow: 0 0 35px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.7); /* Sombra más intensa */
     position: relative;
     overflow: hidden;
+    width: 90%; /* Porcentaje del contenedor padre */
+    min-width: 300px; /* Ancho mínimo */
 }
 
 .marco-dorado::before {
@@ -368,8 +373,10 @@ transform: rotate(360deg);
 }
 
 .galeria-premium img {
-    width: 100%;
-    height: 300px;
+    width: 100%; /* Ahora ocupará el nuevo espacio ampliado */
+    height: auto; /* Altura proporcional */
+    min-height: 250px; /* Altura mínima aumentada */
+    max-height: 500px; /* Altura máxima opcional */
     object-fit: cover;
     border: 3px solid #d4af37;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -692,7 +699,7 @@ transform: rotate(360deg);
             </div>
         </div>
 
-        
+        <div class="cuadro-glam">
             <div class="marco-dorado">
                 <div class="galeria-premium">
 
