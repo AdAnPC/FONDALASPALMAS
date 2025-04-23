@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="/manifest.webmanifest">
     <title>FONDA LAS PALMAS  - Menú de Bebidas</title>
+    
+
     <style>
+        background="fondo.gif"
+        
         * {
             margin: 0;
             padding: 0;
@@ -133,6 +137,8 @@
             
             h1 {
                 font-size: 2rem;
+                margin: 5px 0; /* Reduce espacio entre h1 y h2 */
+                padding: 0;
             }
             
             h2 {
@@ -144,12 +150,66 @@
             }
         }
     </style>
+     <style>
+       
+        img {
+            margin-top: 2px;
+            height: 400px;
+            width: 700px; /* Ajusta el espacio superior */
+        }
+
+        #caballoBla {
+            height: 850px;
+            width: 1550px;
+            position: fixed;
+            top: 50px; /* Distancia desde arriba */
+            right: 0; /* Posición inicial: derecha */
+            transition: left 0.1s ease-out;
+}
+
+@keyframes cabalgar {
+    0% {
+        left: -650px; /* Empieza fuera de la pantalla (izquierda) */
+        top: 0;       /* Arriba */
+    }
+    100% {
+        left: 100%;    /* Termina fuera de la pantalla (derecha) */
+        top: 100vh;    /* Abajo (viewport height) */
+    }
+}
+    </style>
+  <style>
+  body {
+        margin: 0;
+        padding: 0;
+        background: url('palmas.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
+    }
+    
+    .container {
+        background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
+        color: white;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
 </head>
-<body>
-    <div class="container">
-        <header>
+<body >
+    
+
+    <div  class="container" >
+        
+        
+        <header >
+            
             <h1>FONDA LAS PALMAS DISCO BAR</h1>
             <h2>DISCO BAR</h2>
+            
         </header>
         
         <div class="search-container">
