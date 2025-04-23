@@ -174,6 +174,14 @@
             right: 0; /* Posición inicial: derecha */
             transition: left 0.1s ease-out;
 }
+#cube:hover{
+border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 15px 15px #ec731e;
+-webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+}
 
 @keyframes cabalgar {
     0% {
@@ -309,6 +317,92 @@
 .bebidas-btn:hover {
     background-color: #ffc800;
     transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+.cuadro-glam {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: radial-gradient(circle, #3a3a3a 0%, #1a1a1a 100%);
+}
+
+.marco-dorado {
+    border: 15px solid transparent;
+    border-image: linear-gradient(45deg, #d4af37, #f9d423, #d4af37);
+    border-image-slice: 1;
+    padding: 5px;
+    background: #111;
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.marco-dorado::before {
+    content: "";
+    position: absolute;
+    top: -10px; left: -10px;
+    right: -10px; bottom: -10px;
+    background: linear-gradient(45deg, 
+        transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%);
+    background-size: 10px 10px;
+    animation: shine 3s linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.galeria-premium {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.galeria-premium img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #333;
+    transition: all 0.5s ease;
+    filter: sepia(0.3) brightness(0.9);
+}
+
+.galeria-premium img:hover {
+    transform: scale(1.05);
+    filter: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+    z-index: 3;
+}
+
+@keyframes shine {
+    0% { background-position: -100px 0; }
+    100% { background-position: 100px 0; }
+}
+
+/* Efecto de luces parpadeantes */
+.marco-dorado::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 30%, 
+        rgba(249, 212, 35, 0.1) 0%, 
+        transparent 30%);
+    animation: flicker 5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
 }
 </style>
 
@@ -575,6 +669,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="cuadro-glam">
+            <div class="marco-dorado">
+                <div class="galeria-premium">
+                    <img src="cuTazo2.png" alt="Imagen 1">
+                    <img src="imagen2.jpg" alt="Imagen 2">
+                    <img src="imagen3.jpg" alt="Imagen 3">
+                    <img src="imagen4.jpg" alt="Imagen 4">
+                </div>
+            </div>
+        </div>
+
         <img id="cube" src="cuTazo2.png" alt="prueba">
         <div class="note">
             Propina voluntaria para el mesero
