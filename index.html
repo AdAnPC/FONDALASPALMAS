@@ -359,30 +359,51 @@ transform: rotate(360deg);
 
 .galeria-premium {
     display: grid;
-    grid-template-columns: 1fr; /* Solo 1 columna */
-    gap: 20px; /* Espacio entre imágenes */
-    padding: 80px;
-    max-width: 600px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrado horizontal */
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
 }
 
 .galeria-premium img {
-    width: 100%; /* Ocupa el 100% del ancho disponible */
-    height: auto; /* Altura automática (proporcional) */
-    min-height: 200px; /* Altura mínima */
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    border: 2px solid #333;
-    border-radius: 8px; /* Bordes redondeados */
-    transition: transform 0.3s ease;
+    border: 3px solid #d4af37;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.4s;
 }
 
 .galeria-premium img:hover {
-    transform: scale(1.05);
-    filter: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
-    z-index: 3;
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+/* Media Query para ajustes específicos en móviles pequeños */
+@media (max-width: 480px) {
+    .galeria-premium {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .galeria-premium img {
+        height: 150px; /* Altura aún más reducida */
+        border-width: 1px;
+    }
+}
+
+/* Desactivar efectos costosos en dispositivos low-end */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .galeria-premium img {
+        transition: none;
+    }
+}
+
+
+
 
 @keyframes shine {
     0% { background-position: -100px 0; }
