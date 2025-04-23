@@ -399,7 +399,11 @@ transform: rotate(360deg);
     }
     
     .galeria-premium img {
-        height: 180px; /* Altura aún más reducida */
+        height: auto; /* Altura flexible */
+        min-height: 180px; /* Altura mínima */
+        max-height: 300px; /* Altura máxima opcional */
+        width: 100%; /* Ocupa el ancho completo */
+        object-fit: contain; /* Muestra la imagen completa sin recortar */
         border-width: 1px;
     }
 }
