@@ -359,16 +359,17 @@ transform: rotate(360deg);
 
 .galeria-premium {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 20px;
-    position: relative;
-    z-index: 2;
+    grid-template-columns: 1fr; /* Solo 1 columna */
+    gap: 20px; /* Espacio entre imágenes */
+    padding: 100px;
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
 }
 
 .galeria-premium img {
     width: 200%;
     height: 200px;
+    
     object-fit: cover;
     border: 2px solid #333;
     transition: all 0.5s ease;
@@ -675,7 +676,7 @@ transform: rotate(360deg);
                 <div class="galeria-premium">
 
                     <img src="cuTazo2.png" alt="Imagen 1">
-                    <img src="pr" alt="">
+                    <img src="" alt="">
                     <img src="cuTazo.png" alt="ima">
                   
                 </div>
