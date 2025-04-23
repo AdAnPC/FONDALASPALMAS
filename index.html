@@ -89,9 +89,10 @@
             background: linear-gradient(135deg, rgb(250, 249, 247), rgb(147, 86, 209));
     -webkit-background-clip: text;
     background-clip: text;
+    font-size: 1.5rem ;
     color: transparent;
     font-weight: bold;
-    text-shadow: 0 1px 1px rgba(171, 79, 232, 0.577);
+    text-shadow: 0 1px 1px rgba(171, 79, 232, 0.466);
         }
         
         .note {
@@ -205,6 +206,26 @@
         
     }
  
+
+    .cerveza-btn {
+    background-image: url('cer.png');
+    background-repeat: no-repeat;
+    background-position: -25px 13%;
+    background-size: 100px;
+    padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+    border: none;
+    border-radius: 8px;
+    background-color: #d2a604;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cerveza-btn:hover {
+    background-color: #ffc800;
+    transform: translateY(-2px);
+}
 </style>
 
 </head>
@@ -221,7 +242,8 @@
         </div>
         
         <div class="menu-section">
-            <button class="category-toggle" onclick="toggleSection('cervezas')">Cervezas</button>
+            <button class="category-toggle cerveza-btn" onclick="toggleSection('cervezas')">Cervezas</button>
+
             <div id="cervezas">
                 <div class="menu-item">
                     <span class="item-name">CERVEZA NEGRA</span>
