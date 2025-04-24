@@ -3,40 +3,36 @@ body {
     padding: 0;
     background: url('fon.png') no-repeat center center;
     background-size: cover;
-    background-attachment: scroll; /* Evita zoom raro en iPhone */
+    background-attachment: scroll; /* Cambiado para evitar problemas en iPhone */
     min-height: 100vh;
     font-family: Arial, sans-serif;
 
-    /* Prevención de bugs en iOS */
+    /* Mejoras para móviles */
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Ajustes para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
-    body {
-        background-position: center top;
-        background-size: cover;
-    }
-}
-
-
-
-
-
-
-
-
-
 .container {
-    background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
+    background-color: rgba(0, 0, 0, 0.25); /* Leve ajuste a la transparencia */
     color: white;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    
+}
+
+/* Mejora de visualización en móviles */
+@media only screen and (max-width: 768px) {
+    body {
+        background-position: center top;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+        font-size: 16px;
+    }
 }
 
 
