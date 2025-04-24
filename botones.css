@@ -1,22 +1,23 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('fon.png') no-repeat center center fixed;
+    background: url('fon.png') no-repeat center center;
     background-size: cover;
     min-height: 100vh;
     font-family: Arial, sans-serif;
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    background-attachment: scroll; /* Importante para iOS */
 }
 
-/* Asegura buena visualización en pantallas pequeñas */
+/* Ajuste adicional para móviles */
 @media only screen and (max-width: 600px) {
     body {
         background-position: center top;
-        background-attachment: scroll; /* Mejor rendimiento en móviles */
     }
 }
+
 
 
 
