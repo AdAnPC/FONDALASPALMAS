@@ -1,38 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('fon.png') no-repeat center center;
+    background: url('fon.png') no-repeat center center fixed;
     background-size: cover;
-    background-attachment: scroll; /* Cambiado para evitar problemas en iPhone */
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-
-    /* Mejoras para móviles */
-    -webkit-touch-callout: none;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+    font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.25); /* Leve ajuste a la transparencia */
+    background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
     color: white;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-}
-
-/* Mejora de visualización en móviles */
-@media only screen and (max-width: 768px) {
-    body {
-        background-position: center top;
-    }
-
-    .container {
-        margin: 10px;
-        padding: 15px;
-        font-size: 16px;
-    }
+    
 }
 
 
