@@ -1,11 +1,39 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('fon.png') no-repeat center center fixed;
+    background: url('fon.png') no-repeat center center;
     background-size: cover;
     min-height: 100vh;
-    font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Fix esencial para iOS */
+    -webkit-background-size: cover;
+    background-attachment: scroll; /* ¡Crítico! Evita bugs en Safari */
+    position: fixed; /* Elimina rebotes/estiramientos */
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    
+    /* Safe Areas para Notch/Dynamic Island */
+    padding:
+        env(safe-area-inset-top, 0px)
+        env(safe-area-inset-right, 0px)
+        env(safe-area-inset-bottom, 0px)
+        env(safe-area-inset-left, 0px);
 }
+
+/* Corrección para Safari < 15 */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: initial;
+    }
+}
+
+
+
+
+
+
 
 .container {
     background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
