@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+h1 {
+    color: #180df3;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+h3 {
+    color: #0726ef;
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e1e1e1;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-price {
+    background: linear-gradient(135deg, rgb(235, 243, 5), rgb(202, 209, 4));
+-webkit-background-clip: text;
+background-clip: text;
+font-size: 1.5rem ;
+color: transparent;
+font-weight: bold;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.314);
+}
+
+.note {
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
+    color: #ebe5e5;
+    padding: 10px;
+    background-color: #f9f9f960;
+    border-radius: 5px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+background-color: rgba(255, 255, 255, 0.08);
+border: 1px solid rgba(255, 255, 255, 0.15);
+color: white;
+}
+
+#searchInput::placeholder {
+color: rgba(255, 255, 255, 0.6);
+}
+
+/* estilos para los botones */
+.category-toggle {
+    background-color: #1d9308;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category-toggle:hover {
+    background-color: #010cde;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin: 5px 0; /* Reduce espacio entre h1 y h2 */
+        padding: 0;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+}

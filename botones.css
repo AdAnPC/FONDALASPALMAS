@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('fon.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    -webkit-background-size: cover; /* Para compatibilidad con algunos navegadores móviles */
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media only screen and (max-width: 600px) {
+    body {
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 100%; /* Ajusta la altura pero no el ancho */
+    }
+}
+
+/* Para pantallas muy pequeñas (ej. smartphones en portrait) */
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+    body {
+        background-size: 100% auto; /* Cambia la estrategia de ajuste */
+    }
+}
+
+/* Optimización para tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-size: 100% 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+.container {
+    background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+
+.cerveza-btn {
+background-image: url('cer.png');
+background-repeat: no-repeat;
+background-position: -25px 13%;
+background-size: 100px;
+padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+border: none;
+border-radius: 8px;
+background-color: #d2a604;
+color: #000;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.cerveza-btn:hover {
+background-color: #ffc800;
+transform: translateY(-2px);
+}
+
+
+.ron-btn {
+background-image: url('Ron.png');
+background-repeat: no-repeat;
+background-position: -25px 40%;
+background-size: 100px;
+padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+border: none;
+border-radius: 8px;
+background-color: #d2a604;
+color: #000;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.ron-btn:hover {
+background-color: #ffc800;
+transform: translateY(-2px);
+}
+
+
+.licores-btn {
+background-image: url('buca.png');
+background-repeat: no-repeat;
+background-position: -4px 40%;
+background-size: 55px;
+padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+border: none;
+border-radius: 8px;
+background-color: #d2a604;
+color: #000;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.licores-btn:hover {
+background-color: #ffc800;
+transform: translateY(-2px);
+}
+
+
+.aguardiente-btn {
+background-image: url('guaro.png');
+background-repeat: no-repeat;
+background-position: -4px 40%;
+background-size: 40px;
+padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+border: none;
+border-radius: 8px;
+background-color: #d2a604;
+color: #000;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.aguardiente-btn:hover {
+background-color: #ffc800;
+transform: translateY(-2px);
+}
+
+
+.bebidas-btn {
+background-image: url('miche.png');
+background-repeat: no-repeat;
+background-position: 5px 40%;
+background-size: 40px;
+padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
+border: none;
+border-radius: 8px;
+background-color: #d2a604;
+color: #000;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.bebidas-btn:hover {
+background-color: #ffc800;
+transform: translateY(-2px);
+}
+

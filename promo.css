@@ -1,0 +1,131 @@
+
+
+
+.cuadro-glam {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: radial-gradient(circle, #3a3a3a 0%, #1a1a1a 100%);
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1200px; /* Ancho máximo ajustable */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+.marco-dorado {
+    border: 15px solid transparent; /* Borde más grueso */
+    border-image: linear-gradient(45deg, #d4af37, #f9d423, #d4af37);
+    border-image-slice: 1;
+    padding: 30px; /* Más espacio interno */
+    background: #111;
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.7); /* Sombra más intensa */
+    position: relative;
+    overflow: hidden;
+    width: 90%; /* Porcentaje del contenedor padre */
+    min-width: 300px; /* Ancho mínimo */
+}
+
+.marco-dorado::before {
+    content: "";
+    position: absolute;
+    top: -10px; left: -10px;
+    right: -10px; bottom: -10px;
+    background: linear-gradient(45deg, 
+        transparent 48%, #d4af37 49%, #d4af37 51%, transparent 52%);
+    background-size: 10px 10px;
+    animation: shine 3s linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.galeria-premium {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.galeria-premium img {
+    width: 100%; /* Ahora ocupará el nuevo espacio ampliado */
+    height: auto; /* Altura proporcional */
+    min-height: 250px; /* Altura mínima aumentada */
+    max-height: 500px; /* Altura máxima opcional */
+    object-fit: cover;
+    border: 3px solid #d4af37;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.4s;
+}
+
+.galeria-premium img:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Media Query para ajustes específicos en móviles pequeños */
+@media (max-width: 700px) {
+    .galeria-premium {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .galeria-premium img {
+        height: auto; /* Altura flexible */
+        min-height: 180px; /* Altura mínima */
+        max-height: 300px; /* Altura máxima opcional */
+        width: 100%; /* Ocupa el ancho completo */
+        object-fit: contain; /* Muestra la imagen completa sin recortar */
+        border-width: 1px;
+    }
+}
+
+/* Desactivar efectos costosos en dispositivos low-end */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .galeria-premium img {
+        transition: none;
+    }
+}
+
+
+
+
+@keyframes shine {
+    0% { background-position: -100px 0; }
+    100% { background-position: 100px 0; }
+}
+
+/* Efecto de luces parpadeantes */
+.marco-dorado::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 30%, 
+        rgba(249, 212, 35, 0.1) 0%, 
+        transparent 30%);
+    animation: flicker 5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+
+
+
+
+
+
+
+.promo {
+    display: grid;
+    place-items: center; /* Centrado en ambos ejes */
+    min-height: 80px;
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a, #1a1a1a);
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
