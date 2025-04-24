@@ -4,35 +4,61 @@ body {
     background: url('fon.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    -webkit-background-size: cover; /* Para compatibilidad con algunos navegadores móviles */
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Compatible con iOS y Android */
+    -webkit-background-size: cover; /* Safari/Chrome */
+    -moz-background-size: cover; /* Firefox */
+    -o-background-size: cover; /* Opera */
+    overflow-x: hidden; /* Evita scroll horizontal */
+    /* Asegura que el fondo no se repita */
+    background-attachment: scroll;
+    touch-action: manipulation; /* Mejora la respuesta táctil */
 }
 
-/* Media queries para diferentes tamaños de pantalla */
-@media only screen and (max-width: 600px) {
+/* 📱 Safe Areas (iPhone Notch/Dynamic Island y Android con bordes redondeados) */
+@supports (padding: max(0px)) {
     body {
-        background-attachment: scroll; /* Mejor rendimiento en móviles */
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: auto 100%; /* Ajusta la altura pero no el ancho */
+        padding:
+            env(safe-area-inset-top, 0px)
+            env(safe-area-inset-right, 0px)
+            env(safe-area-inset-bottom, 0px)
+            env(safe-area-inset-left, 0px);
     }
 }
 
-/* Para pantallas muy pequeñas (ej. smartphones en portrait) */
-@media only screen and (max-width: 400px) and (orientation: portrait) {
+/* 🖥️ Dispositivos pequeños (Móviles en portrait) */
+@media (max-width: 576px) and (orientation: portrait) {
     body {
-        background-size: 100% auto; /* Cambia la estrategia de ajuste */
+        background-attachment: scroll;
+        background-size: 100% 100%; /* Cubre toda la pantalla */
     }
 }
 
-/* Optimización para tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+/* 📲 Dispositivos en landscape (horizontal) */
+@media (max-width: 932px) and (orientation: landscape) {
     body {
-        background-size: 100% 100%;
+        background-size: auto 100%; /* Ajusta la altura */
     }
 }
+
+/* 🚫 Evitar zoom en inputs (Safari/Chrome en móviles) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input, select, textarea, button {
+        font-size: 16px; /* Tamaño fijo para evitar zoom automático */
+    }
+}
+
+/* 🛑 Corrección para Chrome Android (scroll suave) */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Mejor scroll en iOS */
+}
+
+
+
+
+
+
+
 
 .container {
     background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
