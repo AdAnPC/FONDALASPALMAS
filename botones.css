@@ -4,34 +4,8 @@ body {
     background: url('fon.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-attachment: fixed; /* Fix para Safari */
-    background-attachment: fixed;
-    overflow-x: hidden;
-    touch-action: manipulation;
+    font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
 }
-
-/* Elimina el highlight al tocar botones */
-button, a, [role="button"], input[type="button"], input[type="submit"] {
-    -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
-}
-
-/* Safe Areas para iPhone */
-@supports (padding: max(0px)) {
-    body {
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-    }
-}
-
-
-
-
-
-
 
 .container {
     background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
