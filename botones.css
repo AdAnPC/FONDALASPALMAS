@@ -10,8 +10,8 @@ body {
     -webkit-background-size: cover;
     background-attachment: scroll; /* ¡Crítico! Evita bugs en Safari */
     position: fixed; /* Elimina rebotes/estiramientos */
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     overflow: hidden;
     
     /* Safe Areas para Notch/Dynamic Island */
