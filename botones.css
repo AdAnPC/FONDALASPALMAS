@@ -11,8 +11,8 @@ body {
     background-attachment: scroll; /* ¡Crítico! Evita bugs en Safari */
     position: absolute; /* Elimina rebotes/estiramientos */
     overflow-y: auto;
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     
     /* Safe Areas para Notch/Dynamic Island */
