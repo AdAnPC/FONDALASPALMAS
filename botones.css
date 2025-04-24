@@ -1,22 +1,26 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('fon.png') no-repeat center center fixed;
+    background: url('fon.png') no-repeat center center;
     background-size: cover;
+    background-attachment: scroll; /* Evita zoom raro en iPhone */
     min-height: 100vh;
     font-family: Arial, sans-serif;
+
+    /* Prevención de bugs en iOS */
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Asegura buena visualización en pantallas pequeñas */
-@media only screen and (max-width: 600px) {
+/* Ajustes para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
     body {
         background-position: center top;
-        background-attachment: scroll; /* Mejor rendimiento en móviles */
+        background-size: cover;
     }
 }
+
 
 
 
