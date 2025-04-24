@@ -4,60 +4,28 @@ body {
     background: url('fon.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Compatible con iOS y Android */
-    -webkit-background-size: cover; /* Safari/Chrome */
-    -moz-background-size: cover; /* Firefox */
-    -o-background-size: cover; /* Opera */
-    overflow-x: hidden; /* Evita scroll horizontal */
-    /* Asegura que el fondo no se repita */
-    background-attachment: scroll;
-    touch-action: manipulation; /* Mejora la respuesta táctil */
-
-    
-    -webkit-background-attachment: fixed; /* Fija el fondo en iOS */
-    background-attachment: fixed; /* Fija el fondo en otros navegadores */
-
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-attachment: fixed; /* Fix para Safari */
+    background-attachment: fixed;
+    overflow-x: hidden;
+    touch-action: manipulation;
 }
 
-/* 📱 Safe Areas (iPhone Notch/Dynamic Island y Android con bordes redondeados) */
+/* Elimina el highlight al tocar botones */
+button, a, [role="button"], input[type="button"], input[type="submit"] {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+/* Safe Areas para iPhone */
 @supports (padding: max(0px)) {
     body {
-        padding:
-            env(safe-area-inset-top, 0px)
-            env(safe-area-inset-right, 0px)
-            env(safe-area-inset-bottom, 0px)
-            env(safe-area-inset-left, 0px);
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 }
-
-/* 🖥️ Dispositivos pequeños (Móviles en portrait) */
-@media (max-width: 576px) and (orientation: portrait) {
-    body {
-        background-attachment: scroll;
-        background-size: 100% 100%; /* Cubre toda la pantalla */
-    }
-}
-
-/* 📲 Dispositivos en landscape (horizontal) */
-@media (max-width: 932px) and (orientation: landscape) {
-    body {
-        background-size: auto 100%; /* Ajusta la altura */
-    }
-}
-
-/* 🚫 Evitar zoom en inputs (Safari/Chrome en móviles) */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    input, select, textarea, button {
-        font-size: 16px; /* Tamaño fijo para evitar zoom automático */
-    }
-}
-
-/* 🛑 Corrección para Chrome Android (scroll suave) */
-html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Mejor scroll en iOS */
-}
-
 
 
 
