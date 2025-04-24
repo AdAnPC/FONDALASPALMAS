@@ -4,8 +4,27 @@ body {
     background: url('fon.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    font-family: Arial, sans-serif; /* Opcional: estilo de fuente */
+    font-family: Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
+
+/* Asegura buena visualización en pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    body {
+        background-position: center top;
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+    }
+}
+
+
+
+
+
+
+
+
 
 .container {
     background-color: rgba(0, 0, 0, 0.237); /* Fondo semitransparente para mejor legibilidad */
