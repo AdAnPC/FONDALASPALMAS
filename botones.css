@@ -12,6 +12,11 @@ body {
     /* Asegura que el fondo no se repita */
     background-attachment: scroll;
     touch-action: manipulation; /* Mejora la respuesta táctil */
+
+    
+    -webkit-background-attachment: fixed; /* Fija el fondo en iOS */
+    background-attachment: fixed; /* Fija el fondo en otros navegadores */
+
 }
 
 /* 📱 Safe Areas (iPhone Notch/Dynamic Island y Android con bordes redondeados) */
