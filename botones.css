@@ -2,15 +2,24 @@ body {
     margin: 0;
     padding: 0;
     background: url('fon.png') no-repeat center center;
-    background-size: 60% auto; /* 60% de ancho */
+    background-size: 30%  contain;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-background-size: 60% auto;
-    position: fixed;
+    
+    /* Fix esencial para iOS */
+    -webkit-background-size: cover;
+    background-attachment: scroll; /* ¡Crítico! Evita bugs en Safari */
+    position: fixed; /* Elimina rebotes/estiramientos */
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    
+    /* Safe Areas para Notch/Dynamic Island */
+    padding:
+        env(safe-area-inset-top, 0px)
+        env(safe-area-inset-right, 0px)
+        env(safe-area-inset-bottom, 0px)
+        env(safe-area-inset-left, 0px);
 }
 
 /* Corrección para Safari < 15 */
