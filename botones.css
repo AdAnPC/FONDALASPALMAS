@@ -2,15 +2,14 @@ body {
     margin: 0;
     padding: 0;
     background: url('fon.png') no-repeat center center;
-    background-size: 80%  cover;
+    background-size: 30%  contain;
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
     /* Fix esencial para iOS */
-    -webkit-background-size: 80% cover;
+    -webkit-background-size: cover;
     background-attachment: scroll; /* ¡Crítico! Evita bugs en Safari */
-    position: absolute; /* Elimina rebotes/estiramientos */
-    overflow-y: auto;
+    position: fixed; /* Elimina rebotes/estiramientos */
     width: 100%;
     height: 100%;
     overflow: hidden;
