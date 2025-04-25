@@ -55,7 +55,7 @@ transform: translateY(-2px);
 .ron-btn {
 background-image: url('Ron.png');
 background-repeat: no-repeat;
-background-position: -4px 40%;
+background-position: -4px 50%;
 background-size: 100px;
 padding: 8px 20px 8px 50px; /* Arriba | Derecha | Abajo | Izquierda */
 border: none;
